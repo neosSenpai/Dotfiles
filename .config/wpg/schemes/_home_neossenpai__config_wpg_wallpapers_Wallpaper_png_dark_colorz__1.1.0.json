@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/neossenpai/.config/wpg/wallpapers/Wallpaper.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#202327",
+        "foreground": "#c7c8c9",
+        "cursor": "#c7c8c9"
+    },
+    "colors": {
+        "color0": "#202327",
+        "color1": "#a4b1c4",
+        "color2": "#686baa",
+        "color3": "#5c3baa",
+        "color4": "#9367ab",
+        "color5": "#bc91a9",
+        "color6": "#b16164",
+        "color7": "#c7c8c9",
+        "color8": "#575a5d",
+        "color9": "#a4b1c4",
+        "color10": "#686baa",
+        "color11": "#5c3baa",
+        "color12": "#9367ab",
+        "color13": "#bc91a9",
+        "color14": "#b16164",
+        "color15": "#c7c8c9"
+    }
+}

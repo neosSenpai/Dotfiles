@@ -1,0 +1,246 @@
+ls;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   Modified By Aditya Shakya.
+;
+;==========================================================
+
+[color]
+
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+bg = ${xrdb:color0:#222}
+fg = ${xrdb:color7:#222}
+fg-alt = ${xrdb:color7:#222}
+
+acolor = ${xrdb:color2:#222}
+curgent = ${xrdb:color1:#222}
+coccupied = ${xrdb:color3:#222}
+
+## Material Colors
+
+red = #e53935
+pink = #d81b60
+purple = #8e24aa
+deep-purple = #5e35b1
+indigo = #3949ab
+blue = #1e88e5
+light-blue = #039be5
+cyan = #00acc1
+teal = #00897b
+green = #43a047
+light-green = #7cb342
+lime = #c0ca33
+yellow = #fdd835
+amber = #ffb300
+orange = #fb8c00
+deep-orange = #f4511e
+brown = #6d4c41
+grey = #757575
+blue-gray = #546e7a
+
+;==========================================================
+
+[bar/main]
+monitor = DP-2
+width = 100%
+height = 28
+offset-x = 5%
+offset-y = 2%
+bottom = false
+fixed-center = true
+line-size = 2
+
+background = ${color.bg}
+foreground = ${color.fg}
+
+border-size = 3
+border-color = ${color.bg}
+
+module-margin-left = 1
+module-margin-right = 1
+
+;==========================================================
+
+font-0 = "Fantasque Sans Mono:pixelsize=12;2"
+font-1 = "Material Icons:size=13;4"
+
+;==========================================================
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;tray-position = right
+;tray-padding = 0
+;tray-maxsize = 16
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+;== Module Location ========================================================
+
+modules-left = arch i3 term files browser settings
+modules-right = volume date powermenu
+ 
+;== Modules ========================================================
+
+[module/arch]
+type = custom/text
+content = 
+;alt-icon = 
+content-padding = 2
+content-background = ${color.acolor}
+content-foreground = ${color.fg}
+click-left = rmenu_g
+click-middle = rfull
+click-right = rmenu_wi_g
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+format-padding = 0
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+;icon-4 = 5;
+icon-default = 
+
+format = <label-state>
+label-active = %icon%
+label-occupied = %icon%
+label-urgent = %icon%
+label-empty = %icon%
+
+label-occupied-padding = 2
+label-empty-padding = 2
+label-urgent-padding = 2
+label-active-padding = 2
+
+label-active-foreground = ${color.acolor}
+label-urgent-foreground = ${color.curgent}
+label-empty-foreground = ${color.fg}
+label-occupied-foreground = ${color.coccupied}
+
+label-active-underline = ${color.acolor}
+label-urgent-underline = ${color.curgent}
+label-occupied-underline = ${color.coccupied}
+
+[module/term]
+type = custom/text
+content = 
+content-foreground = ${color.fg-alt}
+click-left = kitty &
+
+[module/files]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = ${color.fg-alt}
+click-left = pcmanfm &
+click-right = ranger &
+
+[module/browser]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = ${color.fg-alt}
+click-left = firefox &
+click-right = palemoon &
+
+[module/settings]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = ${color.fg-alt}
+click-left = xfce4-settings &
+click-right = lxappearance &
+
+;==========================================================
+
+[module/volume]
+type = internal/alsa
+;speaker-mixer = Speaker
+;headphone-mixer = Headphone
+;headphone-id = 16
+;mapped = true
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+format-muted-prefix = " "
+label-muted = MUTE
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
+
+
+[module/date]
+type = internal/date
+interval = 30
+label =  %time%
+time =  %I:%M %p
+time-alt =  %Y-%m-%d
+
+[module/powermenu]
+type = custom/text
+content = 
+content-padding = 2
+content-background = ${color.acolor}
+content-foreground = ${color.fg}
+click-left = pmenu_g
+click-right = pmenu_g
+
+[module/i3]
+type = internal/i3
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+format-padding = 0
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+icon-default = 
+
+format = <label-state>
+label-focused = %icon%
+label-unfocused = %icon%
+label-urgent = %icon%
+label-visible = %icon%
+
+label-focused-padding = 2
+label-unfocused-padding = 2
+label-urgent-padding = 2
+label-visible-padding = 2
+
+label-focused-foreground = ${color.acolor}
+label-urgent-foreground = ${color.curgent}
+label-unfocused-foreground = ${color.fg}
+label-visible-foreground = ${color.coccupied}
+
+label-focused-underline = ${color.acolor}
+label-urgent-underline = ${color.curgent}
+label-visible-underline = ${color.coccupied}
+
+
+
+;== EOF ========================================================
